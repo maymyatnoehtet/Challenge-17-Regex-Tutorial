@@ -14,7 +14,11 @@ Each component of this regex has a unique responsibility to make sure that a use
 
 ## Summary
 
-Briefly summarize the regex you will be describing and what you will explain. Include a code snippet of the regex. Replace this text with your summary.
+In this tutorial, we will explain each part of the regular expression that matches a URL. We will break down the regex components and provide examples to demonstrate their functionality.
+
+```
+Regex: /^(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w .-])/?$/
+```
 
 ## Table of Contents
 
@@ -33,6 +37,14 @@ Briefly summarize the regex you will be describing and what you will explain. In
 ## Regex Components
 
 ### Anchors
+
+Anchors are used to match positions in the string. In our regex, the ^ at the beginning of the pattern specifies the start of the string, and the $ at the end specifies the end of the string. Together, they ensure that the entire string matches the pattern.
+
+#### Example:
+```
+Input: "https://www.example.com"
+Explanation: The regex anchors match the entire string "https://www.example.com" because it starts with "https://" and ends with ".com".
+```
 
 ### Quantifiers
 
