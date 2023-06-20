@@ -16,8 +16,9 @@ Each component of this regex has a unique responsibility to make sure that a use
 
 In this tutorial, we will explain each part of the regular expression that matches a URL. We will break down the regex components and provide examples to demonstrate their functionality.
 
+#### Regex
 ```
-Regex: /^(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w .-])/?$/
+/^(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w .-])/?$/
 ```
 
 ## Table of Contents
@@ -48,24 +49,70 @@ Explanation: The regex anchors match the entire string "https://www.example.com"
 
 ### Quantifiers
 
+Quantifiers define the number of occurrences of the preceding element. In our regex, the "?" after "https:" specifies that the "s" is optional, allowing for both "http" and "https" protocols.
+
+#### Example:
+```
+Input: "http://www.example.com"
+Explanation: The "s" in "http" is optional, so the regex matches "http://www.example.com".
+```
+
 ### OR Operator
+
+The OR operator (|) allows for alternative matches. In our regex, it is used to match either a 6-character hex value or a 3-character hex value after the "#" symbol.
+
+#### Example:
+```
+Input: "#ABC123"
+Explanation: The regex matches the hex value "#ABC123" because it satisfies the condition of having either 6 or 3 characters after the "#".
+```
 
 ### Character Classes
 
+Character classes allow matching a specific set of characters. In our regex, the character classes [\da-z.-] match any alphanumeric character, period (.), or hyphen (-).
+
+#### Example:
+```
+Input: "example.com"
+Explanation: The regex matches "example.com" because it consists of alphanumeric characters and a period, which matches the character class [\da-z.-].
+```
+
 ### Flags
+
+Flags modify the behavior of the regex matching. In this regex, However, in our regex, there are no flags specified.
 
 ### Grouping and Capturing
 
+Parentheses are used for grouping and capturing portions of the regex. In our regex, there are three groups defined:
+
+#### Example:
+```
+    Group 1: ([a-z0-9_.-]+) matches one or more alphanumeric characters, underscore (_), period (.), or hyphen (-) before the @ symbol.
+
+    Group 2: ([\da-z.-]+) matches one or more alphanumeric characters, period (.), or hyphen (-) in the domain name.
+
+    Group 3: ([a-z.]{2,6}) matches a domain extension consisting of 2 to 6 lowercase letters or periods.
+```
 ### Bracket Expressions
+
+Bracket expressions specify a range of characters that can match at a particular position. In our regex, bracket expressions are not explicitly used.
 
 ### Greedy and Lazy Match
 
+Greedy and lazy quantifiers control the matching behavior by specifying whether the match should be as long as possible (greedy) or as short as possible (lazy). In our regex, the default greedy behavior is used.
+
 ### Boundaries
+
+Boundaries assert the position of the match at word boundaries. In our regex, boundaries are not explicitly used.
 
 ### Back-references
 
+Back-references allow us to refer to previously captured groups. In our regex, back-references are not used.
+
 ### Look-ahead and Look-behind
+
+Look-ahead and look-behind assertions match a pattern without including it in the overall match. In our regex, look-ahead and look-behind are not used.
 
 ## Author
 
-A short section about the author with a link to the author's GitHub profile (replace with your information and a link to your profile)
+May Myat Noe Htet
