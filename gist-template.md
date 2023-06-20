@@ -103,6 +103,14 @@ period (.), or hyphen (-) in the domain name.
 
 Bracket expressions specify a range of characters that can match at a particular position. In our regex, bracket expressions are not explicitly used.
 
+#### Example:
+```
+Regex: /[aeiou]/
+Input: "Hello"
+Match: "e"
+```
+In the example above, the regex ```/[aeiou]/``` matches the letter 'e' in the word "Hello" because 'e' is one of the characters specified in the bracket expression.
+
 ### Greedy and Lazy Match
 
 Greedy and lazy quantifiers control the matching behavior by specifying whether the match should be as long as possible (greedy) or as short as possible (lazy). In our regex, the default greedy behavior is used.
