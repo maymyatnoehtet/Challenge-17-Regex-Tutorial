@@ -1,4 +1,4 @@
-# Title (replace with your title)
+# Matching a URL ```/^(https?:\/\/)?([\da-z\.-]+)\.([a-z\.]{2,6})([\/\w \.-]*)*\/?$/```
 
 Introductory paragraph (replace this with your text)
 
