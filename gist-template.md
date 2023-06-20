@@ -144,7 +144,7 @@ Regex: /^http$/
 Input: "http"
 ```
 
-The ^ (caret) symbol at the beginning and the $ (dollar sign) symbol at the end enforces that the entire string should match the pattern "http" exactly.
+The ^ symbol at the beginning and the $ symbol at the end enforces that the entire string should match the pattern "http" exactly.
 
 If the input is "http", the regex will provide a match because it exactly matches the pattern specified by the regex. The boundaries ensure that the pattern "http" is matched from the start to the end of the string.
 
