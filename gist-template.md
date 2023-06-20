@@ -101,8 +101,7 @@ period (.), or hyphen (-) in the domain name.
 ```
 ### Bracket Expressions
 
-Bracket expressions specify a range of characters that can match at a particular position. In our regex, bracket expressions are not explicitly used.
-
+Bracket expressions specify a range of characters that can match at a particular position.
 #### Example:
 ```
 Regex: /[aeiou]/
@@ -115,9 +114,39 @@ In the example above, the regex ```/[aeiou]/``` matches the letter 'e' in the wo
 
 Greedy and lazy quantifiers control the matching behavior by specifying whether the match should be as long as possible (greedy) or as short as possible (lazy). In our regex, the default greedy behavior is used.
 
+The * quantifier is greedy by default. It matches zero or more occurrences of the preceding group, which in this case is ```([\/\w .-])```. The greedy behavior means it will match as many occurrences as possible while still allowing the overall pattern to match.
+
+#### Example
+```
+Regex: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-])*?\/?$/
+Input: "https://www.example.com/page1/page2"
+Match: "https://www.example.com/page1/page2"
+```
+
+We can modify the regex to demonstrate the lazy matching behavior.
+
+#### Example:
+```
+Regex: /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([\/\w .-])*??\/?$/
+Input: "https://www.example.com/page1/page2"
+Match: "https://www.example.com/"
+```
+
+The *? quantifier after ([\/\w .-]) makes it lazy. It matches zero or more occurrences of the preceding group in a lazy manner. The lazy behavior means it will match as few occurrences as possible while still allowing the overall pattern to match.
+
 ### Boundaries
 
-Boundaries assert the position of the match at word boundaries. In our regex, boundaries are not explicitly used.
+Boundaries assert the position of the match at word boundaries.
+
+#### Example: 
+```
+Regex: /^http$/
+Input: "http"
+```
+
+The ^ (caret) symbol at the beginning and the $ (dollar sign) symbol at the end enforces that the entire string should match the pattern "http" exactly.
+
+If the input is "http", the regex will provide a match because it exactly matches the pattern specified by the regex. The boundaries ensure that the pattern "http" is matched from the start to the end of the string.
 
 ### Back-references
 
