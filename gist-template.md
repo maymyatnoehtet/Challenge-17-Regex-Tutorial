@@ -44,7 +44,8 @@ Anchors are used to match positions in the string. In our regex, the ^ at the be
 #### Example:
 ```
 Input: "https://www.example.com"
-Explanation: The regex anchors match the entire string "https://www.example.com" because it starts with "https://" and ends with ".com".
+Explanation: The regex anchors match the entire string "https://www.example.com"
+because it starts with "https://" and ends with ".com".
 ```
 
 ### Quantifiers
@@ -64,7 +65,8 @@ The OR operator (|) allows for alternative matches. In our regex, it is used to 
 #### Example:
 ```
 Input: "#ABC123"
-Explanation: The regex matches the hex value "#ABC123" because it satisfies the condition of having either 6 or 3 characters after the "#".
+Explanation: The regex matches the hex value "#ABC123" because it satisfies
+the condition of having either 6 or 3 characters after the "#".
 ```
 
 ### Character Classes
@@ -74,7 +76,8 @@ Character classes allow matching a specific set of characters. In our regex, the
 #### Example:
 ```
 Input: "example.com"
-Explanation: The regex matches "example.com" because it consists of alphanumeric characters and a period, which matches the character class [\da-z.-].
+Explanation: The regex matches "example.com" because it consists of alphanumeric characters
+and a period, which matches the character class [\da-z.-].
 ```
 
 ### Flags
@@ -87,11 +90,14 @@ Parentheses are used for grouping and capturing portions of the regex. In our re
 
 #### Example:
 ```
-    Group 1: ([a-z0-9_.-]+) matches one or more alphanumeric characters, underscore (_), period (.), or hyphen (-) before the @ symbol.
+    Group 1: ([a-z0-9_.-]+) matches one or more alphanumeric characters,
+underscore (_), period (.), or hyphen (-) before the @ symbol.
 
-    Group 2: ([\da-z.-]+) matches one or more alphanumeric characters, period (.), or hyphen (-) in the domain name.
+    Group 2: ([\da-z.-]+) matches one or more alphanumeric characters,
+period (.), or hyphen (-) in the domain name.
 
-    Group 3: ([a-z.]{2,6}) matches a domain extension consisting of 2 to 6 lowercase letters or periods.
+    Group 3: ([a-z.]{2,6}) matches a domain extension consisting of
+2 to 6 lowercase letters or periods.
 ```
 ### Bracket Expressions
 
