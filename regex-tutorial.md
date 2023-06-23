@@ -51,28 +51,31 @@ because it starts with "https://" and ends with ".com".
 
 ### Quantifiers
 
-Quantifiers define the number of occurrences of the preceding element. In our regex, the "?" after "https:" specifies that the "s" is optional, allowing for both "http" and "https" protocols.
+Quantifiers define the number of occurrences of the preceding element. In our regex, the ```?``` after "https:" specifies that the "s" is optional, allowing for both "http" and "https" protocols. The ```+``` after ```[\da-z.-]``` specifies that the aplhanumeric, period and hyphen can occur one or more times.
 
 #### Example:
 ```
+Regex: https?
 Input: "http://www.example.com"
-Explanation: The "s" in "http" is optional, so the regex matches "http://www.example.com".
+Explanation: The "s" in "http" is optional(zero or one), so the regex matches "http://www.example.com".
+
+Regex: [\da-z.-]+
+Example: www.
 ```
 
 ### OR Operator
 
-The OR operator (|) allows for alternative matches. In our regex, it is used to match either a 6-character hex value or a 3-character hex value after the "#" symbol.
+The OR operator ```(|)``` allows for alternative matches. To illustrate an example of an ```or``` operator, we can modify the regex to match URLs that start with either "http://" or "ftp://" and to do that we can update the regex as follows:
 
 #### Example:
 ```
-Input: "#ABC123"
-Explanation: The regex matches the hex value "#ABC123" because it satisfies
-the condition of having either 6 or 3 characters after the "#".
+Regex: /^(https?|ftp)://([\da-z.-]+).([a-z.]{2,6})([/\w .-])?$/
+Explanation: (https?|ftp) the "|" in this regex allows us to match the URL that either starts with http or https or ftp.
 ```
 
 ### Character Classes
 
-Character classes allow matching a specific set of characters. In our regex, the character classes [\da-z.-] match any alphanumeric character, period (.), or hyphen (-).
+Character classes allow matching a specific set of characters. In our regex, the character classes ```[\da-z.-]``` match any alphanumeric character, period (.), or hyphen (-).
 
 #### Example:
 ```
@@ -83,7 +86,7 @@ and a period, which matches the character class [\da-z.-].
 
 ### Flags
 
-Flags modify the behavior of the regex matching. In this regex, However, in our regex, there are no flags specified.
+Flags modify the behavior of the regex matching. However, in our regex, there are no flags specified.
 
 ### Grouping and Capturing
 
@@ -100,9 +103,11 @@ period (.), or hyphen (-) in the domain name.
     Group 3: ([a-z.]{2,6}) matches a domain extension consisting of
 2 to 6 lowercase letters or periods.
 ```
+
 ### Bracket Expressions
 
 Bracket expressions specify a range of characters that can match at a particular position.
+
 #### Example:
 ```
 Regex: /[aeiou]/
@@ -115,7 +120,7 @@ In the example above, the regex ```/[aeiou]/``` matches the letter 'e' in the wo
 
 Greedy and lazy quantifiers control the matching behavior by specifying whether the match should be as long as possible (greedy) or as short as possible (lazy). In our regex, the default greedy behavior is used.
 
-The * quantifier is greedy by default. It matches zero or more occurrences of the preceding group, which in this case is ```([\/\w .-])```. The greedy behavior means it will match as many occurrences as possible while still allowing the overall pattern to match.
+The ```*``` quantifier is greedy by default. It matches zero or more occurrences of the preceding group, which in this case is ```([\/\w .-])```. The greedy behavior means it will match as many occurrences as possible while still allowing the overall pattern to match.
 
 #### Example
 ```
