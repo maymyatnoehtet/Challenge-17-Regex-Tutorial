@@ -39,10 +39,11 @@ In this tutorial, we will explain each part of the regular expression that match
 
 ### Anchors
 
-Anchors are used to match positions in the string. In our regex, the ^ at the beginning of the pattern specifies the start of the string, and the $ at the end specifies the end of the string. Together, they ensure that the entire string matches the pattern.
+Anchors are used to match positions in the string. In our regex, the ```^``` at the beginning of the pattern specifies the start of the string, and the ```$``` at the end specifies the end of the string. Together, they ensure that the entire string matches the pattern.
 
 #### Example:
 ```
+Regex: /^(https?://)?([\da-z.-]+).([a-z.]{2,6})([/\w .-])/?$/
 Input: "https://www.example.com"
 Explanation: The regex anchors match the entire string "https://www.example.com"
 because it starts with "https://" and ends with ".com".
